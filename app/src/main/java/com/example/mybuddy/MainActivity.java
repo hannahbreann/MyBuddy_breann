@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //opens the photos screen and sends the text with it
     public void openPhotosActivity(String title){
         Intent intent = new Intent(this, Photos.class);
         intent.putExtra("KEY",title);
