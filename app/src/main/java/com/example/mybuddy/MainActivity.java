@@ -1,21 +1,11 @@
 package com.example.mybuddy;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.ActivityManager;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -54,65 +44,60 @@ public class MainActivity extends AppCompatActivity {
         //is associated with
         sad = (Button)findViewById(R.id.Sad);
         sad.setOnClickListener(new View.OnClickListener(){
-            String title = "sad";
             @Override
             public void onClick(View v){
-                openPhotosActivity(title);
+                openSadActivity();
             }
         });
 
+/*
         happy = (Button)findViewById(R.id.Happy);
         happy.setOnClickListener(new View.OnClickListener(){
-            String title = "happy";
             @Override
             public void onClick(View v){
-                openPhotosActivity(title);
+                openPhotosActivity();
             }
         });
 
         angry = (Button)findViewById(R.id.Angry);
         angry.setOnClickListener(new View.OnClickListener(){
-            String title = "angry";
             @Override
             public void onClick(View v){
-                openPhotosActivity(title);
+                openPhotosActivity();
             }
         });
 
         sleepy = (Button)findViewById(R.id.Sleepy);
         sleepy.setOnClickListener(new View.OnClickListener(){
-            String title = "sleepy";
             @Override
             public void onClick(View v){
-                openPhotosActivity(title);
+                openPhotosActivity();
             }
         });
         worried = (Button)findViewById(R.id.Worried);
         worried.setOnClickListener(new View.OnClickListener(){
-            String title = "worried";
             @Override
             public void onClick(View v){
-                openPhotosActivity(title);
+                openPhotosActivity();
             }
         });
 
         overwhelmed = (Button)findViewById(R.id.Overwhelmed);
         overwhelmed.setOnClickListener(new View.OnClickListener(){
-            String title = "overwhelmed";
             @Override
             public void onClick(View v){
-                openPhotosActivity(title);
+                openPhotosActivity();
             }
         });
-
+*/
     }
 
-    //opens the photos screen and sends the text with it
-    public void openPhotosActivity(String title){
-        Intent intent = new Intent(this, Photos.class);
-        intent.putExtra("KEY",title);
+    //opens the sad activity
+    public void openSadActivity(){
+        Intent intent = new Intent(this, Sad.class);
         startActivity(intent);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
