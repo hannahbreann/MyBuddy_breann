@@ -86,7 +86,7 @@
         android:layout_width="195dp"
         android:layout_height="158dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="@string/sad"
+        android:text="@string/Sad"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
