@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Photos"></activity>
+        <activity android:name=".Sad"></activity>
+        <activity android:name=".Happy"></activity>
+        <activity android:name=".Angry"></activity>
+        <activity android:name=".Sleepy"></activity>
+        <activity android:name=".Worried"></activity>
+        <activity android:name=".Overwhelmed"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
