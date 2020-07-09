@@ -50,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-/*
+
         happy = (Button)findViewById(R.id.Happy);
         happy.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                openPhotosActivity();
+                openHappyActivity();
             }
         });
 
@@ -63,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
         angry.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                openPhotosActivity();
+                openAngryActivity();
             }
         });
-
+/*
         sleepy = (Button)findViewById(R.id.Sleepy);
         sleepy.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -92,11 +92,23 @@ public class MainActivity extends AppCompatActivity {
 */
     }
 
-    //opens the sad activity
+//*************Start of functions to open emotion activities**************
     public void openSadActivity(){
         Intent intent = new Intent(this, Sad.class);
         startActivity(intent);
     }
+
+    public void openHappyActivity(){
+        Intent intent = new Intent(this, Happy.class);
+        startActivity(intent);
+    }
+
+    public void openAngryActivity(){
+        Intent intent = new Intent(this, Angry.class);
+        startActivity(intent);
+    }
+
+//*************End of functions to open emotion activities**************
 
 
     @Override
