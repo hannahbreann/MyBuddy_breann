@@ -1,16 +1,21 @@
 package com.example.mybuddy;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import java.net.URI;
 
 public class MainActivity extends AppCompatActivity {
     ImageView ImageView;
@@ -21,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private Button worried;
     private Button overwhelmed;
 
+    FloatingActionButton cam;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -30,18 +37,18 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.Camera);
-        fab.setOnClickListener(new View.OnClickListener() {
+        //all of our buttons, this helps find the id that the button
+        //is associated with
+
+        cam = (FloatingActionButton)findViewById(R.id.Camera);
+        cam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, 0);
-
+                openCamera();
             }
         });
 
-        //all of our buttons, this helps find the id that the button
-        //is associated with
+
         sad = (Button)findViewById(R.id.Sad);
         sad.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -92,7 +99,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//*************Start of functions to open emotion activities**************
+//*************Start of functions to open emotion activities*************//
+
+    public void openCamera(){
+        Intent intent = new Intent(this, CameraActivity.class);
+        startActivity(intent);
+    }
+
     public void openSadActivity(){
         Intent intent = new Intent(this, Sad.class);
         startActivity(intent);
